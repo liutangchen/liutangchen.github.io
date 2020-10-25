@@ -1,57 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>IOC的理解</title>
-    <url>/2020/10/25/IOC%E7%9A%84%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="IOC-概念和原理"><a href="#IOC-概念和原理" class="headerlink" title="IOC(概念和原理)"></a>IOC(概念和原理)</h1><h2 id="什么是IOC"><a href="#什么是IOC" class="headerlink" title="什么是IOC"></a>什么是IOC</h2><p>控制反转，把对象创建和对象之间的调用过程，交给spring进行管理;IOC思想基于IOC容器完成，IOC容器底层就是对象工厂；使用IOC的目的就是为了降低耦合度</p>
-<a id="more"></a>
-
-<h2 id="IOC底层原理"><a href="#IOC底层原理" class="headerlink" title="IOC底层原理"></a>IOC底层原理</h2><ol>
-<li><p>xml解析</p>
-</li>
-<li><p>工厂模式</p>
-</li>
-<li><p>反射</p>
-</li>
-</ol>
-<h2 id="图解IOC底层原理"><a href="#图解IOC底层原理" class="headerlink" title="图解IOC底层原理"></a>图解IOC底层原理</h2><img src="/2020/10/25/IOC%E7%9A%84%E7%90%86%E8%A7%A3/1.png" class="" title="This is an image">
-
-<h1 id="IOC-BeanFactory-接口"><a href="#IOC-BeanFactory-接口" class="headerlink" title="IOC(BeanFactory 接口)"></a>IOC(BeanFactory 接口)</h1><h2 id="spring提供IOC容器实现两种方式：（两个接口）"><a href="#spring提供IOC容器实现两种方式：（两个接口）" class="headerlink" title="spring提供IOC容器实现两种方式：（两个接口）"></a>spring提供IOC容器实现两种方式：（两个接口）</h2><ol>
-<li><p>BeanFactory:IOC容器基本实现，是spring内部的使用接口，不提供开发人员进行使用；在加载配置文件时候不会创建对象，在获取对象（使用）才去创建对象</p>
-</li>
-<li><p>ApplicationContext:BeanFactory接口的子接口，提供更多更强大的功能，一般由开发人员进行使用；加载配置文件时候就会把在配置文件对象创建</p>
-</li>
-</ol>
-<h2 id="ApplicationContext接口的实现类："><a href="#ApplicationContext接口的实现类：" class="headerlink" title="ApplicationContext接口的实现类："></a>ApplicationContext接口的实现类：</h2><img src="/2020/10/25/IOC%E7%9A%84%E7%90%86%E8%A7%A3/2.png" class="" title="This is an image">]]></content>
-      <categories>
-        <category>spring</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>spring</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/10/22/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<a id="more"></a>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>JVM内存模型</title>
     <url>/2020/10/24/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<h1 id="JVM内存模型"><a href="#JVM内存模型" class="headerlink" title="JVM内存模型"></a>JVM内存模型</h1><h2 id="JVM回顾"><a href="#JVM回顾" class="headerlink" title="JVM回顾"></a>JVM回顾</h2><p>JVM = 类加载器(classloader) + 执行引擎(execution engine) + 运行时数据区域(runtime data area)</p>
@@ -108,5 +57,51 @@
         <tag>java</tag>
         <tag>jvm</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>IOC的理解</title>
+    <url>/2020/10/25/IOC%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="IOC-概念和原理"><a href="#IOC-概念和原理" class="headerlink" title="IOC(概念和原理)"></a>IOC(概念和原理)</h1><h2 id="什么是IOC"><a href="#什么是IOC" class="headerlink" title="什么是IOC"></a>什么是IOC</h2><p>控制反转，把对象创建和对象之间的调用过程，交给spring进行管理;IOC思想基于IOC容器完成，IOC容器底层就是对象工厂；使用IOC的目的就是为了降低耦合度</p>
+<a id="more"></a>
+
+<h2 id="IOC底层原理"><a href="#IOC底层原理" class="headerlink" title="IOC底层原理"></a>IOC底层原理</h2><ol>
+<li>xml解析</li>
+<li>工厂模式</li>
+<li>反射</li>
+</ol>
+<h2 id="图解IOC底层原理"><a href="#图解IOC底层原理" class="headerlink" title="图解IOC底层原理"></a>图解IOC底层原理</h2><img src="/2020/10/25/IOC%E7%9A%84%E7%90%86%E8%A7%A3/1.png" class="" title="This is an image">
+
+<h1 id="IOC-BeanFactory-接口"><a href="#IOC-BeanFactory-接口" class="headerlink" title="IOC(BeanFactory 接口)"></a>IOC(BeanFactory 接口)</h1><h2 id="spring提供IOC容器实现两种方式：（两个接口）"><a href="#spring提供IOC容器实现两种方式：（两个接口）" class="headerlink" title="spring提供IOC容器实现两种方式：（两个接口）"></a>spring提供IOC容器实现两种方式：（两个接口）</h2><ol>
+<li>BeanFactory:IOC容器基本实现，是spring内部的使用接口，不提供开发人员进行使用；在加载配置文件时候不会创建对象，在获取对象（使用）才去创建对象</li>
+<li>ApplicationContext:BeanFactory接口的子接口，提供更多更强大的功能，一般由开发人员进行使用；加载配置文件时候就会把在配置文件对象创建</li>
+</ol>
+<h2 id="ApplicationContext接口的实现类："><a href="#ApplicationContext接口的实现类：" class="headerlink" title="ApplicationContext接口的实现类："></a>ApplicationContext接口的实现类：</h2><img src="/2020/10/25/IOC%E7%9A%84%E7%90%86%E8%A7%A3/2.png" class="" title="This is an image">]]></content>
+      <categories>
+        <category>spring</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/10/22/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
 </search>
