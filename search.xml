@@ -4,8 +4,8 @@
     <title>JVM内存模型</title>
     <url>/2020/10/24/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<h1 id="JVM内存模型"><a href="#JVM内存模型" class="headerlink" title="JVM内存模型"></a>JVM内存模型</h1><h2 id="JVM回顾"><a href="#JVM回顾" class="headerlink" title="JVM回顾"></a>JVM回顾</h2><p>JVM = 类加载器(classloader) + 执行引擎(execution engine) + 运行时数据区域(runtime data area)</p>
+<img src="/2020/10/24/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/1.jpg" class="" title="This is an image">
 <a id="more"></a>
-<p><img src="1.jpg"></p>
 ]]></content>
       <categories>
         <category>JVM</category>
