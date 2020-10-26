@@ -28,10 +28,8 @@
 <li>如何设置单实例还是多实例</li>
 </ol>
 <ul>
-<li><pre><code>在spring配置文件bean标签里面有属性（scope）用于设置单实例还是多实例</code></pre>
-</li>
-<li><pre><code>scope属性值：默认为（singleton）,表示是单实例对象；另一个值为（prototype）,表示是多实例对象。</code></pre>
-</li>
+<li>在spring配置文件bean标签里面有属性（scope）用于设置单实例还是多实例</li>
+<li>scope属性值：默认为（singleton）,表示是单实例对象；另一个值为（prototype）,表示是多实例对象。</li>
 </ul>
 <img src="/2020/10/25/IOC%E7%9A%84%E7%90%86%E8%A7%A3/4.png" class="" title="This is an image">
 
@@ -39,10 +37,8 @@
 <li>singleton和prototype的区别</li>
 </ol>
 <ul>
-<li><pre><code>singleton单实例，prototype多实例</code></pre>
-</li>
-<li><pre><code>设置scope值是singleton的时候，加载spring配置文件时候就会创建单实例对象；设置scope值是prototype的时候，不是在加载spring配置文件时候创建对象，而是在调用getBean方法时创建多实例对象</code></pre>
-</li>
+<li>singleton单实例，prototype多实例</li>
+<li>设置scope值是singleton的时候，加载spring配置文件时候就会创建单实例对象；设置scope值是prototype的时候，不是在加载spring配置文件时候创建对象，而是在调用getBean方法时创建多实例对象</li>
 </ul>
 ]]></content>
       <categories>
