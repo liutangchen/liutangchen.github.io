@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2020/10/22/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>JVM内存模型</title>
     <url>/2020/10/24/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<h1 id="JVM内存模型"><a href="#JVM内存模型" class="headerlink" title="JVM内存模型"></a>JVM内存模型</h1><h2 id="JVM回顾"><a href="#JVM回顾" class="headerlink" title="JVM回顾"></a>JVM回顾</h2><p>JVM = 类加载器(classloader) + 执行引擎(execution engine) + 运行时数据区域(runtime data area)</p>
-<img src="/2020/10/24/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/1.jpg" class="" title="This is an image">
+<img src="/2020/10/24/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/1.png" class="" title="This is an image">
 <a id="more"></a>
 <h2 id="运行时数据区域"><a href="#运行时数据区域" class="headerlink" title="运行时数据区域"></a>运行时数据区域</h2><p>Java虚拟机在执行Java程序的过程中会把它所管理的内存划分为若干个不同的数据区域。这些区域都有各自的用途，以及创建和销毁的时间，有的区域随着虚拟机进程的启动而存在，有些区域则是依赖用户线程的启动和结束而建立和销毁。</p>
-<img src="/2020/10/24/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/2.jpg" class="" title="This is an image">
+<img src="/2020/10/24/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/2.png" class="" title="This is an image">
 
 <h3 id="程序计数器（Program-Counter-Register）"><a href="#程序计数器（Program-Counter-Register）" class="headerlink" title="程序计数器（Program Counter Register）"></a>程序计数器（Program Counter Register）</h3><ul>
 <li>线程私有，它的生命周期与线程相同。</li>
@@ -34,7 +54,7 @@
 <li>被所有线程共享，在虚拟机启动时创建，用来存放对象实例，几乎所有的对象实例都在这里分配内存。</li>
 <li>对于大多数应用来说，Java堆（Java Heap）是Java虚拟机所管理的内存中最大的一块。</li>
 <li>Java堆是垃圾收集器管理的主要区域，因此很多时候也被称做“GC堆”。如果从内存回收的角度看，由于现在收集器基本都是采用的分代收集算法，所以Java堆中还可以细分为：新生代和老年代；新生代又有Eden空间、From Survivor空间、To Survivor空间三部分。</li>
-<li>Java 堆不需要连续内存，并且可以通过动态增加其内存，增加失败会抛出 OutOfMemoryError 异常。<img src="/2020/10/24/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/3.jpg" class="" title="This is an image">
+<li>Java 堆不需要连续内存，并且可以通过动态增加其内存，增加失败会抛出 OutOfMemoryError 异常。<img src="/2020/10/24/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/3.png" class="" title="This is an image">
 
 </li>
 </ul>
@@ -75,7 +95,32 @@
 <li>BeanFactory:IOC容器基本实现，是spring内部的使用接口，不提供开发人员进行使用；在加载配置文件时候不会创建对象，在获取对象（使用）才去创建对象</li>
 <li>ApplicationContext:BeanFactory接口的子接口，提供更多更强大的功能，一般由开发人员进行使用；加载配置文件时候就会把在配置文件对象创建</li>
 </ol>
-<h2 id="ApplicationContext接口的实现类："><a href="#ApplicationContext接口的实现类：" class="headerlink" title="ApplicationContext接口的实现类："></a>ApplicationContext接口的实现类：</h2><img src="/2020/10/25/IOC%E7%9A%84%E7%90%86%E8%A7%A3/2.png" class="" title="This is an image">]]></content>
+<h2 id="ApplicationContext接口的实现类："><a href="#ApplicationContext接口的实现类：" class="headerlink" title="ApplicationContext接口的实现类："></a>ApplicationContext接口的实现类：</h2><img src="/2020/10/25/IOC%E7%9A%84%E7%90%86%E8%A7%A3/2.png" class="" title="This is an image">
+
+<h1 id="IOC操作Bean管理（bean作用域）"><a href="#IOC操作Bean管理（bean作用域）" class="headerlink" title="IOC操作Bean管理（bean作用域）"></a>IOC操作Bean管理（bean作用域）</h1><ol>
+<li>在spring里面，默认情况下，bean是单实例对象</li>
+</ol>
+<img src="/2020/10/25/IOC%E7%9A%84%E7%90%86%E8%A7%A3/3.png" class="" title="This is an image">
+
+<ol start="2">
+<li><p>如何设置单实例还是多实例</p>
+<ol>
+<li>在spring配置文件bean标签里面有属性（scope）用于设置单实例还是多实例</li>
+<li>scope属性值：默认为（singleton）,表示是单实例对象；另一个值为（prototype）,表示是多实例对象。</li>
+</ol>
+</li>
+</ol>
+<img src="/2020/10/25/IOC%E7%9A%84%E7%90%86%E8%A7%A3/4.png" class="" title="This is an image">
+
+<ol start="3">
+<li><p>singleton和prototype的区别</p>
+<ol>
+<li>singleton单实例，prototype多实例</li>
+<li>设置scope值是singleton的时候，加载spring配置文件时候就会创建单实例对象；设置scope值是prototype的时候，不是在加载spring配置文件时候创建对象，而是在调用getBean方法时创建多实例对象</li>
+</ol>
+</li>
+</ol>
+]]></content>
       <categories>
         <category>spring</category>
       </categories>
@@ -83,25 +128,5 @@
         <tag>java</tag>
         <tag>spring</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/10/22/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<a id="more"></a>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
 </search>
