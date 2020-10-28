@@ -80,6 +80,44 @@
 </ol>
 <img src="/2020/10/25/IOC%E7%9A%84%E7%90%86%E8%A7%A3/6.png" class="" title="This is an image">
 
+<h1 id="IOC-操作-Bean管理-基于注解方式"><a href="#IOC-操作-Bean管理-基于注解方式" class="headerlink" title="IOC 操作 Bean管理(基于注解方式)"></a>IOC 操作 Bean管理(基于注解方式)</h1><ol>
+<li><p>什么是注解</p>
+<p>（1）注解是代码特殊标记，格式:@注解名称(属性名称=属性值, 属性名称=属性值..)</p>
+<p>（2）使用注解，注解作用在类上面，方法上面，属性上面</p>
+<p>（3）使用注解的目的：简化xml配置</p>
+</li>
+<li><p>Spring 针对 Bean 管理中创建对象提供的注解</p>
+<p>（1）@Component</p>
+<p>（2）@Service</p>
+<p>（3）@Controller</p>
+<p>（4）@Repository</p>
+<p>*上面四个注解功能是一样的，都可以用来创建bean实例</p>
+</li>
+<li><p>基于注解方式实现属性注入</p>
+<p>（1）@Autowired:根据<strong>属性类型</strong>进行自动装配（<strong>注意：</strong>如果需要注入一个接口实现类的对象，但此接口有多个实现类，此时光靠@Autowired无法完成，需要@Qualifier指定<strong>名称</strong>根据名称完成注入）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserService</span> </span>&#123; </span><br><span class="line">    <span class="comment">// 定义dao类型属性 </span></span><br><span class="line">    <span class="comment">// 不需要添加set方法 </span></span><br><span class="line">    <span class="comment">// 添加注入属性注解</span></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserDao userDao;  <span class="comment">// UserDao接口的实现类只能有一个 </span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;service add.......&quot;</span>);</span><br><span class="line">        userDao.add();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<p>   （2）@Qualifier:根据<strong>名称</strong>进行注入，它的作用是在按照类中注入的基础之上再按照名称注入；它在给类成员注入时不能单独使用（但是在给方法参数注入时可以单独使用），因此**@Qualifier常常组合@Autowired一起使用，用来指明具体名字的自动装配**</p>
+   <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Autowired</span> <span class="comment">//根据类型进行注入</span></span><br><span class="line"><span class="meta">@Qualifier(value = &quot;userDaoImpl1&quot;)</span> <span class="comment">//根据名称进行注入 </span></span><br><span class="line"><span class="keyword">private</span> UserDao userDao;  <span class="comment">// UserDao接口的实现类有多个</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>   （3）@Resource:可以根据<strong>类型</strong>注入，也可以根据<strong>名称</strong>注入</p>
+   <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//@Resource  // 根据类型进行注入</span></span><br><span class="line"><span class="meta">@Resource(name = &quot;userDaoImpl1&quot;)</span> <span class="comment">// 根据名称进行注入 </span></span><br><span class="line"><span class="keyword">private</span> UserDao userDao;</span><br></pre></td></tr></table></figure>
+
+<p>   （4）@Value:注入普通类型属性</p>
+   <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Value(value = &quot;abc&quot;)</span> </span><br><span class="line"><span class="keyword">private</span> String name;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
 ]]></content>
       <categories>
         <category>spring</category>
@@ -88,6 +126,26 @@
         <tag>java</tag>
         <tag>spring</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/10/22/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>JVM内存模型</title>
@@ -147,25 +205,5 @@
         <tag>java</tag>
         <tag>jvm</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/10/22/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<a id="more"></a>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
 </search>
