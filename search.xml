@@ -10,6 +10,10 @@
 <p>第二个参数：增强方法所在的类，这个类实现的接口，支持多个接口</p>
 <p>第三个参数：实现这个接口InvocationHandler,创建代理对象，写增强部分</p>
 </li>
+</ol>
+<a id="more"></a>
+
+<ol start="2">
 <li><p>编写 JDK 动态代理代码</p>
 <p>（1）创建接口，定义方法</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserDao</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">update</span><span class="params">(String id)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
